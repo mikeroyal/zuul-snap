@@ -1,5 +1,5 @@
-name: vulkan-tools
-summary: Vulkan Utilities and Tools.
+name: zuul
+summary: Zuul is a gateway service that provides dynamic routing, monitoring, resiliency, security, and more.
 description: 
   
 adopt-info: devmode # use 'strict' once you have the right plugs and slots
@@ -13,15 +13,15 @@ architectures:
   - build-on: arm64
 
 apps:
-  vulkan-tools:
-    command: vulkan-tools
+  zuul:
+    command: zuul
     plugs:
       - network
 
 parts:
-  vulkan-tools:
+  zuul:
     plugin: 
-    source: https://github.com/KhronosGroup/Vulkan-Tools.git
+    source: https://github.com/Netflix/zuul.git
     source-type: git
     override-pull: |
       snapcraftctl pull
